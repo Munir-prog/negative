@@ -1,10 +1,10 @@
-spring:
-  cloud:
-    consul: 8500
-    host: localhost
-    discovery:
-      instance-id: negative-i2
-  application:
-    name: negative
-server:
-  port: 8082
+#spring:
+#  cloud:
+#    consul: 8500
+#    host: localhost
+#    discovery:
+#      instance-id: negative-i2
+#  application:
+#    name: negative
+#server:
+#  port: 8082
