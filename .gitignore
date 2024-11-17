@@ -35,5 +35,4 @@ build/
 .gitattributes
 .mvn/
 mvnw.cmd
-mvnw
 
