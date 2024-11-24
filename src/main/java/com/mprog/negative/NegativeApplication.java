@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -29,7 +30,7 @@ public class NegativeApplication {
 
 	@GetMapping
 	public List<Negative> getNegatives() {
-//		log.info("service: {}", service);
+		log.info("service: {}", LocalDateTime.now());
 		return List.of(new Negative(1, 20, "Bank robbery"), new Negative(2, 85, "Mall robbery"));
 	}
 }
