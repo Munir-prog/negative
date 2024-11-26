@@ -1,5 +1,6 @@
 FROM alpine:3 as base
 RUN apk add git openjdk17
+ARG CACHEBUST=3
 RUN git clone https://github.com/Munir-prog/negative.git && pwd
 WORKDIR /negative
 RUN ./mvnw package
