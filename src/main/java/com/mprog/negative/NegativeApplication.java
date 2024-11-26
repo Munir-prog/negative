@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -29,8 +31,8 @@ public class NegativeApplication {
 	}
 
 	@GetMapping
-	public List<Negative> getNegatives() {
-		log.info("service: {}", LocalDateTime.now());
+	public List<Negative> getNegatives() throws UnknownHostException {
+		log.info("service: {} {}", InetAddress.getLocalHost().getHostName(), LocalDateTime.now());
 		return List.of(new Negative(1, 20, "Bank robbery"), new Negative(2, 85, "Mall robbery"));
 	}
 }
