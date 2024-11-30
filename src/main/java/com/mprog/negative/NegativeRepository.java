@@ -27,7 +27,7 @@ public class NegativeRepository {
 
     @Transactional
     public void update(String serviceName) {
-        Integer count = (Integer) entityManager.createNativeQuery("select count from request where name = :name")
+        Integer count = (Integer) entityManager.createNativeQuery("select count from request where name = :name for update")
                 .setParameter("name", serviceName)
                 .getSingleResult();
 
