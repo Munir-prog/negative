@@ -21,9 +21,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NegativeApplication {
 
-//	@Value("${spring.cloud.discovery.instance-id}")
-//	private String service;
-//
 	private final NegativeRepository negativeRepository;
 
 	public static void main(String[] args) {
@@ -35,14 +32,9 @@ public class NegativeApplication {
 
 	@GetMapping
 	public List<Negative> getNegatives() throws UnknownHostException {
-		log.info("log 1");
 		String serviceName = InetAddress.getLocalHost().getHostName();
-		log.info("log 2");
-//		log.info("service: {} {}", serviceName, LocalDateTime.now());
+		log.info("service: {} {}", serviceName, LocalDateTime.now());
 		negativeRepository.update(serviceName);
-		log.info("log 3");
-		List<Negative> negatives = List.of(new Negative(1, 20, "Bank robbery"), new Negative(2, 85, "Mall robbery"));
-		log.info("log 4");
-		return negatives;
+		return List.of(new Negative(1, 20, "Bank robbery"), new Negative(2, 85, "Mall robbery"));
 	}
 }
