@@ -8,9 +8,13 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
-        format_sql: true
-    show-sql: true
+        format_sql: false
+    show-sql: false
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/bor}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:postgres}
+
+
+negative:
+  sleep: ${NEGATIVE_SLEEP:0}
